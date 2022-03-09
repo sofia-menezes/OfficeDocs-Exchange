@@ -132,7 +132,7 @@ You can create a new Azure virtual network with a domain controller with Azure P
    $vm=Add-AZVMDataDisk -VM $vm -Name adVM-DataDisk1 -CreateOption Attach -ManagedDiskId $dataDisk1.Id -Lun 1
    $cred=Get-Credential -Message "Type the name and password of the local administrator account for adVM."
    $vm=Set-AZVMOperatingSystem -VM $vm -Windows -ComputerName adVM -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-   $vm=Set-AZVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
+   $vm=Set-AZVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2019-Datacenter -Version "latest"
    $vm=Add-AZVMNetworkInterface -VM $vm -Id $nic.Id
    New-AZVM -ResourceGroupName $rgName -Location $locName -VM $vm
    ```
